@@ -7,18 +7,21 @@ function RegisterComponent({ changeComponent }) {
       <div className="container">
         <h3>Sign Up</h3>
         <p>Email</p>
-        <input type="email" />
-        <p>Password</p>
-        <input type="password" />
-        <button>Continue</button>
+        <form action="#">
+          <input type="email" />
+          <p>Password</p>
+          <input type="password" />
+
+          <button type="submit">Continue</button>
+        </form>
+
         <div className="login">
           <p>Do you already have an account?</p>{" "}
           <button
             className="log-in-btn"
             onClick={() => changeComponent("login")}
           >
-            {" "}
-            Log In{" "}
+            Log In
           </button>
         </div>
 

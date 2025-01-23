@@ -7,18 +7,20 @@ function LoginComponent({ changeComponent }) {
       <div className="container">
         <h3>Log In</h3>
         <p>Email</p>
-        <input type="email" />
-        <p>Password</p>
-        <input type="password" />
-        <button>Continue</button>
+        <form action="#">
+          <input type="email" />
+          <p>Password</p>
+          <input type="password" />
+
+          <button type="submit">Continue</button>
+        </form>
         <div className="login">
           <p>Dont you have an account?</p>
           <button
             className="log-in-btn"
             onClick={() => changeComponent("signup")}
           >
-            {" "}
-            Sign Up{" "}
+            Sign Up
           </button>
         </div>
 

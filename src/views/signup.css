@@ -105,6 +105,13 @@
   border: 1px solid #58585857;
 }
 
+.container form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .container p {
   display: flex;
   width: 250px;
