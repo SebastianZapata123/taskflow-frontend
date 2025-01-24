@@ -1,0 +1,26 @@
+.tasklabel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid rgba(230, 230, 230, 0.719);
+  padding: 10px;
+  width: 80%;
+  border-radius: 7px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  transition: 0.2s;
+}
+
+.tasklabel .taskname {
+  margin: 0;
+  overflow: hidden; /* Oculta el desbordamiento */
+  white-space: nowrap; /* Evita saltos de línea */
+  text-overflow: ellipsis; /* Agrega los puntos suspensivos */
+  max-width: 70%; /* Ajusta según el diseño, limita el espacio del texto */
+}
+
+.tasklabel:hover {
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: rgb(233, 233, 233);
+}
