@@ -1,0 +1,28 @@
+.usercontent {
+  padding-left: 10px;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.usercontent img {
+  height: 80%;
+  margin-right: 10px;
+}
+
+.data {
+  color: rgb(82, 82, 82);
+  height: 100%;
+  font-size: 13px;
+}
+
+.data h3 {
+  font-weight: bolder;
+}
+
+.data p,
+h3 {
+  margin: 0;
+}

@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap");
+
+.addstatus {
+  margin-right: 50px;
+  height: 30px;
+  width: 150px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.205);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-size: 15px;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.addstatus:active {
+  color: white;
+  transition: 0.2s;
+  background-color: rgb(19, 19, 19);
+}
+
+.addstatus p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-right: 5px;
+  width: auto;
+  height: 100%;
+}
+
+.formulario {
+  box-shadow: 0px 0px 9000px 9000px rgba(0 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  width: 300px;
+  height: 400px;
+  background-color: #eeeeeee0;
+  position: absolute;
+  bottom: -500px;
+  right: 500px;
+}
+
+.formulario form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: black;
+  height: 90%;
+  width: 80%;
+}
+
+.formulario input {
+  font-weight: bolder;
+  width: 90%;
+  font-family: quicksand;
+  padding-left: 10px;
+  color: rgb(46, 46, 46);
+  background-color: rgb(202, 202, 202);
+  height: 30px;
+  outline: none;
+  border-radius: 15px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+.save {
+  font-size: 15px;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.205);
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-top: 10px;
+  height: 30px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.save:active {
+  color: white;
+  transition: 0.2s;
+  background-color: rgb(77, 77, 77);
+}

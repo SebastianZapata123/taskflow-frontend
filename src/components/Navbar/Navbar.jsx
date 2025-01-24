@@ -1,6 +1,8 @@
 import logo from "../../assets/logo.png";
 import "../Navbar/navbar.css";
-import user from "../../assets/user.png";
+import User from "../User/User";
+import NewBoardButton from "../Board/NewBoard";
+import BoardLabel from "../BoardLabel/BoardLabel";
 
 function Navbar() {
   return (
@@ -11,8 +13,14 @@ function Navbar() {
           <h3 className="titulo">TaskFlow</h3>
         </div>
         <div className="layer2">
-          <img src={user} alt="" width={30} />
+          <User />
+          <BoardLabel name="BoardExample1" />
+          <BoardLabel name="BoardExample1" />
+          <BoardLabel name="BoardExample1" />
+          <BoardLabel name="BoardExample1" />
+          <BoardLabel name="BoardExample1" />
         </div>
+        <NewBoardButton />
       </nav>
       ;
     </>
