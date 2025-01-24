@@ -3,6 +3,7 @@ import "../Navbar/navbar.css";
 import User from "../User/User";
 import NewBoardButton from "../Board/NewBoard";
 import BoardLabel from "../BoardLabel/BoardLabel";
+import Logout from "../Logout/Logout";
 
 function Navbar() {
   return (
@@ -21,6 +22,7 @@ function Navbar() {
           <BoardLabel name="BoardExample1" />
         </div>
         <NewBoardButton />
+        <Logout />
       </nav>
       ;
     </>

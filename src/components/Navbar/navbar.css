@@ -37,6 +37,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.39);
 }
 
 .nav .layer1 img {

@@ -1,17 +1,11 @@
-.newboardlabel {
+.logout {
   padding-bottom: 5px;
   height: 50px;
   width: 95%;
-  margin-left: 20px;
+  margin-top: 5px;
 }
 
-.newboardlabel button .iconboard {
-  transition: 0.5s;
-
-  color: white;
-}
-
-.newboardlabel button {
+.logout button {
   cursor: pointer;
   border-radius: 10px;
   font-size: 15px;
@@ -28,16 +22,10 @@
   border: none;
 }
 
-.newboardlabel button:hover {
+.logout button:hover {
   background-color: rgba(128, 128, 128, 0.267);
 }
 
-.newboardlabel button:hover .iconboard {
-  margin-left: 10px;
-  transition: 0.5s;
-  color: rgb(68, 68, 68);
-}
-
-.newboardlabel button .icon {
+.logout button .iconlogout {
   margin-left: 5px;
 }
