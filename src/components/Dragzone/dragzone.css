@@ -1,0 +1,13 @@
+.dragzone {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: calc(100% - 250px); /* Ajusta al tamaño restante del contenedor */
+  display: grid;
+  gap: 15px; /* Espacio entre los cuadrados */
+  padding: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Siempre 3 columnas por fila */
+  box-sizing: border-box;
+  overflow-y: auto; /* Scroll si el contenido es demasiado */
+}

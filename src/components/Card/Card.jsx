@@ -1,3 +1,9 @@
+import "./card.css";
+
 export default function Card() {
-  return;
+  return (
+    <>
+      <div className="card"></div>
+    </>
+  );
 }
