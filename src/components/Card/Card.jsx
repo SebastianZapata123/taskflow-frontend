@@ -1,9 +1,13 @@
 import "./card.css";
 
-export default function Card() {
+export default function Card(props) {
   return (
     <>
-      <div className="card"></div>
+      <div className="card">
+        {props.taskname}
+        {props.desc}
+        {props.status}
+      </div>
     </>
   );
 }
