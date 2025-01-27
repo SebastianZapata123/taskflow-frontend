@@ -4,9 +4,9 @@ export default function Card(props) {
   return (
     <>
       <div className="card">
-        {props.taskname}
-        {props.desc}
-        {props.status}
+        <p>{props.taskname}</p>
+        <p>{props.desc}</p>
+        <p>{props.status}</p>
       </div>
     </>
   );
