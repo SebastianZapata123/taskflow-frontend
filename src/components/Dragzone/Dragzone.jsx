@@ -41,7 +41,7 @@ function Dragzone() {
                 taskname={task.taskname}
                 desc={task.desc}
                 status={task.status}
-                cambiarEstado={cambiarEstado} // Pasamos la función
+                cambiarEstado={cambiarEstado}
               />
             ))}
         </div>
