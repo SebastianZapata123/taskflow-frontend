@@ -4,7 +4,6 @@ import User from "../User/User";
 import NewTaskdButton from "../Board/NewBoard";
 import BoardLabel from "../BoardLabel/BoardLabel";
 import Logout from "../Logout/Logout";
-import Menu from "../Menu/Menu";
 
 function Navbar() {
   return (
@@ -18,7 +17,7 @@ function Navbar() {
           <User />
         </div>
         <NewTaskdButton />
-        <Menu />
+
         <Logout />
       </nav>
       ;

@@ -20,6 +20,7 @@ function Dragzone() {
   ]);
 
   const cambiarEstado = (id, nuevoEstado) => {
+    // FUNCTION PUT AQUI <--- HACIA EL BACKEND
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === id ? { ...task, status: nuevoEstado } : task
