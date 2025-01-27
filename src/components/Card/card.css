@@ -4,10 +4,81 @@
   width: 90%;
   height: auto;
   max-width: 320px;
-  border-radius: 15px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-bottom: 10px;
+  border-top: 10px solid rgba(82, 82, 82, 0.308);
+  margin-bottom: 10px;
+}
+
+.title {
+  padding: 10px;
+  width: 80%;
+}
+
+.taskdesc {
+  font-weight: 600;
+  color: rgba(56, 56, 56, 0.856);
+  border-top: 1px solid rgba(0, 0, 0, 0.199);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  width: 80%;
+  font-size: 14px;
+  word-break: break-word; /* Asegura que las palabras largas se rompan */
+  overflow-wrap: break-word; /* Soporte adicional para navegadores modernos */
+  margin-bottom: 20px;
+}
+
+select {
+  margin-left: 10px;
+  width: 50%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9b4;
+  font-size: 12px;
+  color: #333;
+  cursor: pointer;
+}
+
+option {
+  background-color: #fff;
+  color: #333;
+  font-size: 16px;
+}
+
+.card p {
+  margin: 0;
+}
+
+.statuschange {
+  display: flex;
+  justify-content: start;
+  height: 25px;
+  width: 90%;
+}
+
+.statuschange button {
+  width: 70px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: quicksand;
+  font-weight: bolder;
+  border-radius: 12px;
+  color: rgb(71, 71, 71);
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border: 2px solid rgba(12, 12, 12, 0.212);
+}
+
+.statuschange button:active {
+  transition: 0.2s;
+  background-color: rgba(92, 92, 92, 0.349);
 }
