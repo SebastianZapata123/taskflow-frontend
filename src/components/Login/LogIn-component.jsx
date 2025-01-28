@@ -25,7 +25,11 @@ function LoginComponent({ changeComponent }) {
         options
       );
       const result = await response.json();
+
       console.log(result);
+      const token = result.data.token;
+
+      localStorage.setItem("jwt", token);
     } catch (error) {
       console.error("Error:", error);
     }
@@ -36,9 +40,9 @@ function LoginComponent({ changeComponent }) {
         <h3>Log In</h3>
         <p>Email</p>
         <form onSubmit={handleUserLogin}>
-          <input type="email" />
+          <input type="email" name="email" />
           <p>Password</p>
-          <input type="password" />
+          <input type="password" name="password" />
 
           <button type="submit">Continue</button>
         </form>
