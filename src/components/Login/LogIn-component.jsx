@@ -2,12 +2,40 @@ import google from "../../assets/google-logo.svg";
 import "../../views/SignUp.css";
 
 function LoginComponent({ changeComponent }) {
+  const handleUserLogin = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      correo: event.target.email.value,
+      contraseña: event.target.password.value,
+    };
+
+    // Opciones para la solicitud
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
+
+    try {
+      const response = await fetch(
+        "http://localhost:3000/auth/login/",
+        options
+      );
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
   return (
     <>
       <div className="container">
         <h3>Log In</h3>
         <p>Email</p>
-        <form action="#">
+        <form onSubmit={handleUserLogin}>
           <input type="email" />
           <p>Password</p>
           <input type="password" />
