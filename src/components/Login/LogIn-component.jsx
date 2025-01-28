@@ -26,10 +26,16 @@ function LoginComponent({ changeComponent }) {
       );
       const result = await response.json();
 
+      // Recuperar el tolken de la respuesta
       console.log(result);
       const token = result.data.token;
 
+      // Guardar el token en el local storage para usarse despues en cada peticion GET a la API
       localStorage.setItem("jwt", token);
+
+      setInterval(() => {
+        window.location.replace("/home");
+      }, 1000);
     } catch (error) {
       console.error("Error:", error);
     }
