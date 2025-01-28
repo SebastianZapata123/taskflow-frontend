@@ -1,51 +1,48 @@
-import { data } from "react-router-dom";
 import google from "../../assets/google-logo.svg";
 import "../../views/SignUp.css";
 
 function RegisterComponent({ changeComponent }) {
-  function hanleUserRegister(event) {
+  const handleUserRegister = async (event) => {
+    event.preventDefault();
+
     const data = {
       nombre: event.target.name.value,
       correo: event.target.email.value,
       contraseña: event.target.password.value,
     };
-    return { data };
-  }
-  const jsondata = hanleUserRegister;
 
-  const options = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(jsondata),
-  };
-
-  async function sendData() {
-    const isResponseOk = (response) => {
-      if (!response.ok) throw new Error(response.status);
-      return response.text();
+    // Opciones para la solicitud
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     };
-    const response = await fetch(
-      "http://localhost:3000/auth/crearUsuario",
-      options
-    ).then((res) => isResponseOk(res));
-  }
-  sendData();
+
+    try {
+      const response = await fetch(
+        "http://localhost:3000/auth/crearUsuario/",
+        options
+      );
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
 
   return (
     <>
       <div className="container">
         <h3>Sign Up</h3>
-        <form onSubmit={hanleUserRegister}>
+        <form onSubmit={handleUserRegister}>
           <p>Your name</p>
-          <input type="text" name="name" />
-
+          <input type="text" name="name" required />
           <p>Email</p>
-
-          <input type="email" name="email" />
+          <input type="email" name="email" required />
           <p>Password</p>
-          <input type="password" name="password" />
+          <input type="password" name="password" required />
 
           <button type="submit">Continue</button>
         </form>
