@@ -57,13 +57,13 @@ option {
 
 .statuschange {
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
   height: 25px;
   width: 90%;
 }
 
 .statuschange button {
-  width: 70px;
+  width: 100%;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -81,4 +81,17 @@ option {
 .statuschange button:active {
   transition: 0.2s;
   background-color: rgba(92, 92, 92, 0.349);
+}
+
+.statuschange .deletetask {
+  margin-left: 10px;
+  border: none;
+  width: 40px;
+  font-size: 20px;
+  color: rgb(126, 0, 0);
+}
+
+.statuschange .deletetask:active {
+  color: white;
+  background-color: rgb(255, 108, 108);
 }
