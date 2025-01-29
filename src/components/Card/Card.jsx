@@ -1,12 +1,24 @@
 import "./card.css";
 import { MdDelete } from "react-icons/md";
 
-export default function Card({ id, taskname, desc, status, cambiarEstado }) {
+export default function Card({
+  id,
+  taskname,
+  desc,
+  status,
+  cambiarEstado,
+  prioridad,
+  cambiarPropiedad,
+}) {
   const manejarCambio = (e) => {
     cambiarEstado(id, e.target.value); // Llama a la función cambiarEstado con el nuevo estado
   };
+
+  const prioridadCambio = (e) => {
+    cambiarPropiedad(id, e.target.value);
+  };
   async function removeTask() {
-    alert("removve");
+    alert("remove");
   }
 
   return (
@@ -18,7 +30,7 @@ export default function Card({ id, taskname, desc, status, cambiarEstado }) {
         <p>{desc}</p>
       </div>
       <div className="statuschange">
-        <label htmlFor={`estado-${id}`}>Estado:</label>
+        <label htmlFor={`estado-${id}`}>Status:</label>
         <select
           id={`estado-${id}`}
           value={status}
@@ -27,6 +39,16 @@ export default function Card({ id, taskname, desc, status, cambiarEstado }) {
           <option value="pending">Pending</option>
           <option value="inprogress">In Progress</option>
           <option value="done">Done</option>
+        </select>
+        <label htmlFor={`estado-${id}`}>Priority:</label>
+        <select
+          id={`prioridad-${id}`}
+          value={prioridad}
+          onChange={prioridadCambio}
+        >
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
         </select>
         <button className="deletetask" onClick={removeTask}>
           <MdDelete />

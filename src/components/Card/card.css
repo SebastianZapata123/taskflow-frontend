@@ -1,5 +1,5 @@
 .card {
-  background-color: rgb(235, 235, 235);
+  background-color: rgb(240, 240, 240);
   color: black;
   width: 90%;
   height: auto;
@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   padding-bottom: 10px;
-  border-top: 10px solid rgba(82, 82, 82, 0.308);
+  border-top: 5px solid rgba(82, 82, 82, 0.308);
   margin-bottom: 10px;
 }
 
@@ -20,6 +20,7 @@
 }
 
 .taskdesc {
+  flex-direction: column;
   font-weight: 600;
   color: rgba(56, 56, 56, 0.856);
   border-top: 1px solid rgba(0, 0, 0, 0.199);
