@@ -38,6 +38,11 @@ function LoginComponent({ changeComponent }) {
       // Recuperar el tolken de la respuesta
       console.log(result);
       const token = result.data.token;
+      const username = result.data.nombre;
+      const email = result.data.correo;
+
+      localStorage.setItem("username", username);
+      localStorage.setItem("useremail", email);
 
       setInterval(() => {
         window.location.href = "/home";
