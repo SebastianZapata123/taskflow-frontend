@@ -1,7 +1,16 @@
 import google from "../../assets/google-logo.svg";
 import "../../views/SignUp.css";
+import { useState } from "react";
 
 function LoginComponent({ changeComponent }) {
+  const [loading, setLoading] = useState("");
+  const loadingFunction = () => {
+    setLoading("active");
+    setInterval(() => {
+      setLoading("");
+    }, 2000);
+  };
+
   const handleUserLogin = async (event) => {
     event.preventDefault();
 
@@ -30,7 +39,9 @@ function LoginComponent({ changeComponent }) {
       console.log(result);
       const token = result.data.token;
 
-      window.location.href = "/home";
+      setInterval(() => {
+        window.location.href = "/home";
+      }, 1000);
 
       // Guardar el token en el local storage para usarse despues en cada peticion GET a la API
       localStorage.setItem("jwt", token);
@@ -48,7 +59,10 @@ function LoginComponent({ changeComponent }) {
           <p>Password</p>
           <input type="password" name="password" />
 
-          <button type="submit">Continue</button>
+          <button type="submit" onClick={loadingFunction} className="continue">
+            <div className={`${loading}`}></div>
+            Continue
+          </button>
         </form>
         <div className="login">
           <p>Dont you have an account?</p>

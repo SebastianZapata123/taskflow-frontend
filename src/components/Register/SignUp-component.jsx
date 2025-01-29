@@ -1,7 +1,15 @@
 import google from "../../assets/google-logo.svg";
 import "../../views/SignUp.css";
+import { useState } from "react";
 
 function RegisterComponent({ changeComponent }) {
+  const [loading, setLoading] = useState("");
+  const loadingFunction = () => {
+    setLoading("active");
+    setInterval(() => {
+      setLoading("");
+    }, 2000);
+  };
   const handleUserRegister = async (event) => {
     event.preventDefault();
 
@@ -10,6 +18,9 @@ function RegisterComponent({ changeComponent }) {
       correo: event.target.email.value,
       contraseña: event.target.password.value,
     };
+
+    localStorage.setItem("username", data.nombre);
+    localStorage.setItem("useremail", data.correo);
 
     // Opciones para la solicitud
     const options = {
@@ -44,7 +55,10 @@ function RegisterComponent({ changeComponent }) {
           <p>Password</p>
           <input type="password" name="password" required />
 
-          <button type="submit">Continue</button>
+          <button type="submit" onClick={loadingFunction}>
+            <div className={`loader ${loading} `}></div>
+            Continue
+          </button>
         </form>
 
         <div className="login">
