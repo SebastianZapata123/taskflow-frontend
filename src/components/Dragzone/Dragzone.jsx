@@ -28,6 +28,7 @@ function Dragzone() {
   ]);
 
   const cambiarPrioridad = (id, nuevaPrioridad) => {
+    // FUNCTION PUT AQUI <--- HACIA EL BACKEND
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
         task.id === id ? { ...task, prioridad: nuevaPrioridad } : task
