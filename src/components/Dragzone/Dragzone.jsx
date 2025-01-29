@@ -2,30 +2,30 @@ import React, { useState } from "react";
 import Card from "../Card/Card";
 import "../Dragzone/dragzone.css";
 
+async function getTask() {
+  const jwtToken = localStorage.getItem("jwt");
+  const options = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${jwtToken}`,
+    },
+  };
+
+  try {
+    const response = await fetch(`http://localhost:3000/api/tareas`, options);
+    const result = await response.json();
+    console.log(result[0].descripcion); // Devuelve un Array de objetos esta es la manera de acceder
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+
 function Dragzone() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      taskname: "Borrar la base de datos :v",
-      desc: "loremipsumdolor jalkdjalkjdaldjaldjsajdasdjajdalsjlakdsjalsdjalsjdlasjdalksdjalksdj",
-      status: "pending",
-      prioridad: "low",
-    },
-    {
-      id: 2,
-      taskname: "Revisar el css",
-      desc: "Description2",
-      status: "inprogress",
-      prioridad: "low",
-    },
-    {
-      id: 3,
-      taskname: "Pene",
-      desc: "Description3",
-      status: "done",
-      prioridad: "low",
-    },
-  ]);
+  getTask();
+  // GET TAREAS AQUI <--- HACIA EL BACKEND
+
+  const [tasks, setTasks] = useState([]);
 
   const cambiarPrioridad = (id, nuevaPrioridad) => {
     // FUNCTION PUT AQUI <--- HACIA EL BACKEND
