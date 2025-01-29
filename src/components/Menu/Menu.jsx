@@ -1,16 +1,19 @@
 import "./menu.css";
 
 function Menu() {
-  async function handleTaskForm(event) {
+  const handleTaskForm = async (event) => {
     event.preventDefault();
     const data = {
       title: event.target.title.value,
       desc: event.target.desc.value,
     };
+
+    const jwtToken = localStorage.getItem("jwt");
     const options = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        Authorization: `Bearer ${jwtToken}`,
       },
       body: JSON.stringify(data),
     };
@@ -37,7 +40,7 @@ function Menu() {
         </div>
       </>
     );
-  }
+  };
 }
 
 export default Menu;
