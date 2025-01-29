@@ -1,42 +1,28 @@
 import React from "react";
 import { createBrowserRouter } from "react-router-dom";
-i;
-
-// Function to get the access token from cookies
-const getAccessToken = () => {
-  return Cookies.get("accessToken");
-};
+import Signup from "./views/Singup";
+import Dashboard from "./views/dashboard";
 
 // Function to check if the user is authenticated
 const isAuthenticated = () => {
-  return !!getAccessToken();
+  if (localStorage.getItem("jwt") === localStorage.getItem("jwt")) {
+    return true;
+  }
 };
 
 // Create the router configuration
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Login />,
+    element: <Signup />,
     index: true,
   },
   {
     element: <ProtectedRoute isAuthenticated={isAuthenticated()} />,
     children: [
       {
-        path: "/chat-list",
-        element: <ChatList />,
-      },
-      {
-        path: "/chat",
-        element: <Chat />,
-      },
-      {
-        path: "/video",
-        element: <Video />,
-      },
-      {
-        path: "/room",
-        element: <Room />,
+        path: "/home",
+        element: <Dashboard />,
       },
     ],
   },
