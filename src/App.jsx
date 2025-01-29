@@ -1,15 +1,8 @@
-import Dashboard from "./views/dashboard";
-import Signup from "./views/Singup";
+import { RouterProvider } from "react-router-dom";
+import router from "./Enrutador";
 
 function App() {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Signup />} />
-        <Route path="/home" element={<Dashboard />} />
-      </Routes>
-    </BrowserRouter>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
