@@ -4,8 +4,8 @@ function Menu() {
   const handleTaskForm = async (event) => {
     event.preventDefault();
     const data = {
-      title: event.target.title.value,
-      desc: event.target.desc.value,
+      titulo: event.target.title.value,
+      descripcion: event.target.desc.value,
     };
 
     const jwtToken = localStorage.getItem("jwt");
@@ -22,6 +22,7 @@ function Menu() {
       const response = await fetch("http://localhost:3000/api/crear", options);
       const result = await response.json();
       console.log(result);
+      console.log();
     } catch (error) {
       console.error("Error:", error);
     }
