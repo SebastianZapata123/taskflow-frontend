@@ -7,10 +7,10 @@ function NewTaskdButton() {
   const [renderForm, setRenderForm] = useState(false);
 
   const handleClick = () => {
-    if (renderForm == true) {
+    if (renderForm === true) {
       setRenderForm(false);
     }
-    if (renderForm == false) {
+    if (renderForm === false) {
       setRenderForm(true);
     }
   };

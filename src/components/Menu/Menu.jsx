@@ -25,22 +25,22 @@ function Menu() {
     } catch (error) {
       console.error("Error:", error);
     }
-    return (
-      <>
-        <div className="formulario">
-          <form onSubmit={handleTaskForm}>
-            <p>Task title</p>
-            <input type="text" name="title" />
-            <p>Task description</p>
-            <input type="text" name="desc" />
-            <button className="save" type="submit">
-              Save
-            </button>
-          </form>
-        </div>
-      </>
-    );
   };
+  return (
+    <>
+      <div className="formulario">
+        <form onSubmit={handleTaskForm}>
+          <p>Task title</p>
+          <input type="text" name="title" required />
+          <p>Task description</p>
+          <input type="text" name="desc" />
+          <button className="save" type="submit" required>
+            Save
+          </button>
+        </form>
+      </div>
+    </>
+  );
 }
 
 export default Menu;
