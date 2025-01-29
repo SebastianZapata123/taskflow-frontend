@@ -14,18 +14,24 @@ async function getTask() {
 
   try {
     const response = await fetch(`http://localhost:3000/api/tareas`, options);
-    const result = await response.json();
-    console.log(result[0].descripcion); // Devuelve un Array de objetos esta es la manera de acceder
+
+    const result = await response.json(); // Devuelve un Array de objetos esta es la manera de acceder
+
+    return result;
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
 function Dragzone() {
-  getTask();
+  const array = [];
+  const taskList = getTask().then((result) => {
+    result.map((task) => array.push(task));
+  });
+
   // GET TAREAS AQUI <--- HACIA EL BACKEND
 
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(array);
 
   const cambiarPrioridad = (id, nuevaPrioridad) => {
     // FUNCTION PUT AQUI <--- HACIA EL BACKEND
