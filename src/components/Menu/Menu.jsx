@@ -7,6 +7,13 @@ function Menu() {
       title: event.target.title.value,
       desc: event.target.desc.value,
     };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
   }
   return (
     <>
