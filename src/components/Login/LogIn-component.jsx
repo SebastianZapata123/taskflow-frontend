@@ -30,6 +30,8 @@ function LoginComponent({ changeComponent }) {
       console.log(result);
       const token = result.data.token;
 
+      window.location.href = "/home";
+
       // Guardar el token en el local storage para usarse despues en cada peticion GET a la API
       localStorage.setItem("jwt", token);
     } catch (error) {
