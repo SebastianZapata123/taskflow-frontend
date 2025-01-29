@@ -3,15 +3,10 @@ import { createBrowserRouter } from "react-router-dom";
 import Signup from "./views/Singup";
 import Dashboard from "./views/dashboard";
 import ProtectedRoute from "./ProtectedRoutes";
-import { useState } from "react";
 
-// Function to check if the user is authenticated
-const isAuthenticated = () => {
-  const [isLogged, setIsLogged] = useState(false);
-
-  if (localStorage.getItem("jwt") === localStorage.getItem("jwt")) {
-  }
-};
+function isAuthenticated() {
+  return localStorage.getItem("jwt") === null ? false : true;
+}
 
 // Create the router configuration
 const router = createBrowserRouter([

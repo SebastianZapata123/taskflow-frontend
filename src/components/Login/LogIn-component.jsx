@@ -1,10 +1,7 @@
 import google from "../../assets/google-logo.svg";
 import "../../views/SignUp.css";
-import { useState } from "react";
 
 function LoginComponent({ changeComponent }) {
-  const [isLogged, setIsLogged] = useState(false);
-
   const handleUserLogin = async (event) => {
     event.preventDefault();
 
@@ -38,20 +35,7 @@ function LoginComponent({ changeComponent }) {
     } catch (error) {
       console.error("Error:", error);
     }
-
-    // Function para manejar las rutas protegidas REACT
-
-    if (localStorage.getItem("jwt") === localStorage.getItem("jwt")) {
-      setInterval(() => {
-        window.location.replace("/home");
-        console.log(setIsLogged);
-      }, 1000);
-      setIsLogged(true);
-    } else {
-      setIsLogged(false);
-    }
   };
-
   return (
     <>
       <div className="container">
