@@ -27,7 +27,7 @@ function Menu() {
     } catch (error) {
       console.error("Error:", error);
     }
-    window.location.reload();
+    window.location.href("/home");
   };
   return (
     <>
@@ -36,8 +36,8 @@ function Menu() {
           <p>Task title</p>
           <input type="text" name="title" required />
           <p>Task description</p>
-          <input type="text" name="desc" />
-          <button className="save" type="submit" required>
+          <input type="text" name="desc" required />
+          <button className="save" type="submit">
             Save
           </button>
         </form>
