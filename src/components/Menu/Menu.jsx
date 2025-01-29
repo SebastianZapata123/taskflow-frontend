@@ -2,10 +2,11 @@ import "./menu.css";
 
 function Menu() {
   const handleTaskForm = async (event) => {
-    event.preventDefault();
     const data = {
       titulo: event.target.title.value,
       descripcion: event.target.desc.value,
+      prioridad: "low",
+      estado: "pending",
     };
 
     const jwtToken = localStorage.getItem("jwt");
@@ -26,6 +27,7 @@ function Menu() {
     } catch (error) {
       console.error("Error:", error);
     }
+    window.location.reload();
   };
   return (
     <>
