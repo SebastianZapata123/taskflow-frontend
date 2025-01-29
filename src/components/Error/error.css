@@ -1,0 +1,24 @@
+.error {
+  left: 700px;
+  opacity: 0%;
+  top: -100px;
+  font-family: quicksand;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: bolder;
+  color: rgb(31, 31, 31);
+  height: 50px;
+  width: 300px;
+  background-color: rgb(255, 154, 154);
+  border-top: solid 10px rgb(233, 0, 0);
+
+  position: absolute;
+}
+
+.showError {
+  opacity: 75%;
+  transition: 0.5s;
+  top: 5px;
+}

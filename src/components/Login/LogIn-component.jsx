@@ -1,8 +1,17 @@
 import google from "../../assets/google-logo.svg";
 import "../../views/SignUp.css";
 import { useState } from "react";
+import Error from "../Error/Error";
 
 function LoginComponent({ changeComponent }) {
+  const [error, setError] = useState("");
+
+  const showloginerror = () => {
+    setError("showError");
+    setInterval(() => {
+      setError("");
+    }, 2000);
+  };
   const [loading, setLoading] = useState("");
   const loadingFunction = () => {
     setLoading("active");
@@ -41,6 +50,8 @@ function LoginComponent({ changeComponent }) {
       const username = result.data.nombre;
       const email = result.data.correo;
 
+      // Guardar el nombre y correo del usuario en el local storage
+
       localStorage.setItem("username", username);
       localStorage.setItem("useremail", email);
 
@@ -51,12 +62,14 @@ function LoginComponent({ changeComponent }) {
       // Guardar el token en el local storage para usarse despues en cada peticion GET a la API
       localStorage.setItem("jwt", token);
     } catch (error) {
+      showloginerror();
       console.error("Error:", error);
     }
   };
   return (
     <>
       <div className="container">
+        <Error error={error} />
         <h3>Log In</h3>
         <p>Email</p>
         <form onSubmit={handleUserLogin}>

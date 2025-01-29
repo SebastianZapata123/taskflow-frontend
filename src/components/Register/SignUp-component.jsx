@@ -19,9 +19,6 @@ function RegisterComponent({ changeComponent }) {
       contraseña: event.target.password.value,
     };
 
-    localStorage.setItem("username", data.nombre);
-    localStorage.setItem("useremail", data.correo);
-
     // Opciones para la solicitud
     const options = {
       method: "POST",
