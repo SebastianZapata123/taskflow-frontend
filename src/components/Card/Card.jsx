@@ -18,7 +18,26 @@ export default function Card({
     cambiarPropiedad(id, e.target.value);
   };
   async function removeTask() {
-    alert("remove");
+    const jwtToken = localStorage.getItem("jwt");
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwtToken}`,
+      },
+    };
+
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/eliminar/${id}`,
+        options
+      );
+      const result = await response.json();
+      console.log(result);
+    } catch (error) {
+      console.error("Error:", error);
+    }
+    window.location.reload();
   }
 
   return (
