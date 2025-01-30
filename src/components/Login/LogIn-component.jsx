@@ -91,10 +91,10 @@ function LoginComponent({ changeComponent }) {
             Sign Up
           </button>
         </div>
-
+        {/*
         <button id="google">
           Log in whit <p> Google </p> <img src={google} alt="" />
-        </button>
+        </button> */}
       </div>
     </>
   );

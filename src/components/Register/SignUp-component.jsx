@@ -67,10 +67,10 @@ function RegisterComponent({ changeComponent }) {
             Log In
           </button>
         </div>
-
+        {/*
         <button id="google">
           Continue whit <p> Google </p> <img src={google} alt="" />
-        </button>
+        </button> */}
       </div>
     </>
   );
