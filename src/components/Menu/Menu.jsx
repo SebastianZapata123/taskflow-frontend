@@ -1,7 +1,11 @@
 import "./menu.css";
 
 function Menu() {
+  const refresh = () => {
+    window.location.reload();
+  };
   const handleTaskForm = async (event) => {
+    event.preventDefault();
     const data = {
       titulo: event.target.title.value,
       descripcion: event.target.desc.value,
@@ -23,11 +27,9 @@ function Menu() {
       const response = await fetch("http://localhost:3000/api/crear", options);
       const result = await response.json();
       console.log(result);
-      console.log();
     } catch (error) {
       console.error("Error:", error);
     }
-    window.location.href("/home");
   };
   return (
     <>
@@ -37,7 +39,7 @@ function Menu() {
           <input type="text" name="title" required />
           <p>Task description</p>
           <input type="text" name="desc" required />
-          <button className="save" type="submit">
+          <button className="save" type="submit" onClick={refresh}>
             Save
           </button>
         </form>

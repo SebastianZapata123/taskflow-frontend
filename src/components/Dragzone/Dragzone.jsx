@@ -1,52 +1,75 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import "../Dragzone/dragzone.css";
 
-async function getTask() {
-  const jwtToken = localStorage.getItem("jwt");
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${jwtToken}`,
-    },
-  };
-
-  try {
-    const response = await fetch(`http://localhost:3000/api/tareas`, options);
-
-    const result = await response.json(); // Devuelve un Array de objetos esta es la manera de acceder
-
-    return result;
-  } catch (error) {
-    console.error("Error:", error);
-  }
-}
-
 function Dragzone() {
-  const array = [];
-  const taskList = getTask().then((result) => {
-    result.map((task) => array.push(task));
-  });
+  const [tasks, setTasks] = useState([]); // Inicializa el estado con un array vacío
+  const jwtToken = localStorage.getItem("jwt");
+  // Función para obtener las tareas
+  async function getTask() {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwtToken}`,
+      },
+    };
 
-  // GET TAREAS AQUI <--- HACIA EL BACKEND
+    try {
+      const response = await fetch(`http://localhost:3000/api/tareas`, options);
+      if (!response.ok) {
+        throw new Error(`Error: ${response.status} ${response.statusText}`);
+      }
+      const result = await response.json();
+      return result;
+    } catch (error) {
+      console.error("Error:", error);
+      return []; // Devuelve un array vacío en caso de error
+    }
+  }
 
-  const [tasks, setTasks] = useState(array);
+  // Cargar las tareas cuando el componente se monta
+  useEffect(() => {
+    getTask().then((result) => {
+      setTasks(result); // Actualiza el estado con las tareas obtenidas
+    });
+  }, []); // El array vacío asegura que esto solo se ejecute una vez
 
+  async function actualizarPrioridad(value, nuevaPrioridad) {
+    const data = {
+      prioridad: nuevaPrioridad,
+    };
+    const options = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${jwtToken}`,
+      },
+      body: JSON.stringify(data),
+    };
+    const response = await fetch(
+      `http://localhost:3000/api/actualizar/${value}`,
+      options
+    );
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+  }
+  // Función para cambiar la prioridad de una tarea
   const cambiarPrioridad = (id, nuevaPrioridad) => {
-    // FUNCTION PUT AQUI <--- HACIA EL BACKEND
     setTasks((prevTasks) =>
-      prevTasks.map((task) =>
-        task.id === id ? { ...task, prioridad: nuevaPrioridad } : task
-      )
+      prevTasks.map((task) => {
+        actualizarPrioridad(task.id, nuevaPrioridad);
+        task.id === id ? { ...task, prioridad: nuevaPrioridad } : task;
+      })
     );
   };
 
+  // Función para cambiar el estado de una tarea
   const cambiarEstado = (id, nuevoEstado) => {
-    // FUNCTION PUT AQUI <--- HACIA EL BACKEND
     setTasks((prevTasks) =>
       prevTasks.map((task) =>
-        task.id === id ? { ...task, status: nuevoEstado } : task
+        task.id === id ? { ...task, estado: nuevoEstado } : task
       )
     );
   };
@@ -58,15 +81,15 @@ function Dragzone() {
         <div className="tasklabel">
           {tasks
             .filter(
-              (task) => task.status === "pending" && task.prioridad === "high"
+              (task) => task.estado === "pending" && task.prioridad === "high"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -74,15 +97,15 @@ function Dragzone() {
             ))}
           {tasks
             .filter(
-              (task) => task.status === "pending" && task.prioridad === "medium"
+              (task) => task.estado === "pending" && task.prioridad === "medium"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -90,15 +113,15 @@ function Dragzone() {
             ))}
           {tasks
             .filter(
-              (task) => task.status === "pending" && task.prioridad === "low"
+              (task) => task.estado === "pending" && task.prioridad === "low"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -112,15 +135,15 @@ function Dragzone() {
           {tasks
             .filter(
               (task) =>
-                task.status === "inprogress" && task.prioridad === "high"
+                task.estado === "inprogress" && task.prioridad === "high"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -129,15 +152,15 @@ function Dragzone() {
           {tasks
             .filter(
               (task) =>
-                task.status === "inprogress" && task.prioridad === "medium"
+                task.estado === "inprogress" && task.prioridad === "medium"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -145,15 +168,15 @@ function Dragzone() {
             ))}
           {tasks
             .filter(
-              (task) => task.status === "inprogress" && task.prioridad === "low"
+              (task) => task.estado === "inprogress" && task.prioridad === "low"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -166,15 +189,15 @@ function Dragzone() {
         <div className="tasklabel">
           {tasks
             .filter(
-              (task) => task.status === "done" && task.prioridad === "high"
+              (task) => task.estado === "done" && task.prioridad === "high"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -182,15 +205,15 @@ function Dragzone() {
             ))}
           {tasks
             .filter(
-              (task) => task.status === "done" && task.prioridad === "medium"
+              (task) => task.estado === "done" && task.prioridad === "medium"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
@@ -198,15 +221,15 @@ function Dragzone() {
             ))}
           {tasks
             .filter(
-              (task) => task.status === "done" && task.prioridad === "low"
+              (task) => task.estado === "done" && task.prioridad === "low"
             )
             .map((task) => (
               <Card
-                key={task.id}
-                id={task.id}
-                taskname={task.taskname}
-                desc={task.desc}
-                status={task.status}
+                key={task._id}
+                id={task._id}
+                taskname={task.titulo}
+                desc={task.descripcion}
+                status={task.estado}
                 cambiarEstado={cambiarEstado}
                 prioridad={task.prioridad}
                 cambiarPropiedad={cambiarPrioridad}
