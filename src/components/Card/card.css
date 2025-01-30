@@ -35,13 +35,24 @@
   margin-bottom: 20px;
 }
 
+.statuschange {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 88%;
+}
+
 select {
+  outline: none;
+  font-weight: bolder;
+  font-family: quicksand;
+  height: 70%;
   margin-left: 10px;
   width: 50%;
   border-radius: 8px;
-  border: 1px solid #ccc;
+  border: none;
   background-color: #f9f9f9b4;
-  font-size: 12px;
+  font-size: 13px;
   color: #333;
   cursor: pointer;
 }
@@ -95,4 +106,27 @@ option {
 .statuschange .deletetask:active {
   color: white;
   background-color: rgb(255, 108, 108);
+}
+
+.prioridad {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  width: 88%;
+}
+
+.prioridad select {
+  outline: none;
+
+  font-weight: bolder;
+  font-family: quicksand;
+  height: 60%;
+  margin-left: 10px;
+  width: 50%;
+  border-radius: 8px;
+  border: none;
+  background-color: #f9f9f9b4;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
 }

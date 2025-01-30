@@ -40,6 +40,12 @@ export default function Card({
           <option value="inprogress">In Progress</option>
           <option value="done">Done</option>
         </select>
+
+        <button className="deletetask" onClick={removeTask}>
+          <MdDelete />
+        </button>
+      </div>
+      <div className="prioridad">
         <label htmlFor={`estado-${id}`}>Priority:</label>
         <select
           id={`prioridad-${id}`}
@@ -50,9 +56,6 @@ export default function Card({
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <button className="deletetask" onClick={removeTask}>
-          <MdDelete />
-        </button>
       </div>
     </div>
   );
