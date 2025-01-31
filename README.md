@@ -10,3 +10,16 @@ Welcome to **TaskFlow**! An intuitive and efficient web application designed to 
 - **Due Dates**: Assign deadlines to tasks to stay on track.
 - **Intuitive Interface**: Clean and user-friendly design for a seamless experience.
 - **User Authentication**: Secure user registration and login.
+
+## Technologies Used 🛠️
+
+- **Frontend**:
+  - React.js
+  - Tailwind CSS (for styling)
+  - Axios (for HTTP requests)
+  - React Router (for navigation)
+- **Backend**:
+  - Node.js
+  - Express.js
+  - MongoDB (database)
+  - JWT (authentication)
