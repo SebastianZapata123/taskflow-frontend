@@ -41,4 +41,4 @@ Follow these steps to set up the project locally:
 4. **Acces the applicatiom**:
 Open your browser and visit
    ```bash
-   http://http://localhost:5173/login
+    http://localhost:5173/login
