@@ -92,5 +92,5 @@ Or just go to https://www.mongodb.com/docs/manual/installation/
 
 # Open Source Project 🌍  
 
-![Made with Love](https://img.shields.io/badge/Made%20with%20Love-%23FF69B4.svg?style=for-the-badge)
+![Made with ❤️](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-gray?style=for-the-badge)
 
