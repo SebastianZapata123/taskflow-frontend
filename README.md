@@ -1,7 +1,7 @@
 # TaskFlow 🚀
 
 <p align="center">
-  <img src="https://imgur.com/U8RatL5.png" alt="TaskFlow Logo" width="200">
+  <img src="https://imgur.com/U8RatL5.png" alt="TaskFlow Logo" width="100">
 </p>
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
