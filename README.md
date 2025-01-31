@@ -1,6 +1,6 @@
 # TaskFlow 🚀
 
-<p align="center" width=40px>
+<p align="center">
   <img src="https://imgur.com/U8RatL5.png" alt="TaskFlow Logo" width="200">
 </p>
 
