@@ -89,3 +89,8 @@ Follow these steps to set up the backend locally:
    npx nodemon index.js
 ## It is recommended to have MongoDB installed. ## 
 Or just go to https://www.mongodb.com/docs/manual/installation/
+
+# Open Source Project 🌍  
+
+![Made with Love](https://img.shields.io/badge/Made%20with%20Love-%23FF69B4.svg?style=for-the-badge)
+
