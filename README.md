@@ -23,3 +23,7 @@ Welcome to **TaskFlow**! An intuitive and efficient web application designed to 
   - Express.js
   - MongoDB (database)
   - JWT (authentication)
+
+## Installation and Setup ⚙️
+
+Follow these steps to set up the project locally:
