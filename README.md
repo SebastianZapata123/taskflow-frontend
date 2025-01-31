@@ -71,4 +71,20 @@ We welcome contributions from the community! Whether you're fixing bugs, improvi
 
 ## Backend 💻 ##
 
+Repo https://github.com/SebastianZapata123/taskflow-backend.git
 
+Follow these steps to set up the backend locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/SebastianZapata123/taskflow-backend.git
+   cd taskflow-backend
+   
+2. **Install dependencies**:
+   ```bash
+   npm install
+   
+3. **Start the development server**:
+   ```bash
+   npx nodemon index.js
+# It is recommended to have MongoDB installed. 
