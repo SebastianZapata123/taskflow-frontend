@@ -52,6 +52,17 @@ Follow these steps to set up the project locally:
   Open your browser and visit
    ```bash
     http://localhost:5173/login
-   
+
+## Contributing 🤝
+
+We welcome contributions from the community! Whether you're fixing bugs, improving documentation, or adding new features, your help is appreciated. Here's how you can contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch** for your feature or bugfix (`git checkout -b feature/awesome-feature`).
+3. **Commit your changes** (`git commit -m 'Add some awesome feature'`).
+4. **Push to the branch** (`git push origin feature/awesome-feature`).
+5. **Open a Pull Request**.
+
+Please make sure to follow our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 
