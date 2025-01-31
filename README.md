@@ -38,7 +38,7 @@ Follow these steps to set up the project locally:
 3. **Start the development server**:
    ```bash
    npm run dev
-4. #Acces the applicatiom#:
+4. ## Acces the applicatiom:
 Open your browser and visit
    ```bash
     http://localhost:5173/login
