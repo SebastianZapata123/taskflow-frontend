@@ -87,4 +87,5 @@ Follow these steps to set up the backend locally:
 3. **Start the development server**:
    ```bash
    npx nodemon index.js
-# It is recommended to have MongoDB installed. 
+## It is recommended to have MongoDB installed. ## 
+Or just go tohttps://www.mongodb.com/docs/manual/installation/
