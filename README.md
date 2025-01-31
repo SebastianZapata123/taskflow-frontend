@@ -45,3 +45,16 @@ Follow these steps to set up the project locally:
   Open your browser and visit
    ```bash
     http://localhost:5173/login
+   
+## Project Structure 📂
+taskflow-frontend/
+├── public/              # Static files
+├── src/                 # Source code
+│   ├── components/      # React components
+│   ├── pages/           # Application pages
+│   ├── services/        # HTTP request logic
+│   ├── styles/          # Global styles
+│   ├── App.js           # Main component
+│   └── index.js         # Entry point
+├── package.json         # Dependencies and scripts
+└── README.md            # This file
