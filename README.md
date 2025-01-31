@@ -32,10 +32,10 @@ Follow these steps to set up the project locally:
    ```bash
    git clone https://github.com/SebastianZapata123/taskflow-frontend.git
    cd taskflow-frontend
-2. **Install dependencies**:
+2. ## Install dependencies:
    ```bash
    npm install
-3. **Start the development server**:
+3. ## Start the development server:
    ```bash
    npm run dev
 4. ## Acces the applicatiom:
