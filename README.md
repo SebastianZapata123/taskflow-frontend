@@ -14,9 +14,9 @@ Welcome to **TaskFlow**! An intuitive and efficient web application designed to 
 ## Technologies Used 🛠️
 
 - **Frontend**:
+  - Vite
   - React.js
-  - Tailwind CSS (for styling)
-  - Axios (for HTTP requests)
+  - CSS (for styling)
   - React Router (for navigation)
 - **Backend**:
   - Node.js
