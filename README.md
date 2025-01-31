@@ -27,3 +27,12 @@ Welcome to **TaskFlow**! An intuitive and efficient web application designed to 
 ## Installation and Setup ⚙️
 
 Follow these steps to set up the project locally:
+
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/SebastianZapata123/taskflow-frontend.git
+   cd taskflow-frontend
+2. ** install dependencies**:
+  ```bash
+  npm install 
+
