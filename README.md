@@ -1,8 +1,8 @@
-# TaskFlow 🚀
-
-<p align="center">
+# TaskFlow 🚀 <p align="center">
   <img src="https://imgur.com/U8RatL5.png" alt="TaskFlow Logo" width="80">
 </p>
+
+
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
