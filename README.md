@@ -47,14 +47,11 @@ Follow these steps to set up the project locally:
     http://localhost:5173/login
    
 ## Project Structure 📂
-taskflow-frontend/
-├── public/              # Static files
-├── src/                 # Source code
-│   ├── components/      # React components
-│   ├── pages/           # Application pages
-│   ├── services/        # HTTP request logic
-│   ├── styles/          # Global styles
-│   ├── App.js           # Main component
-│   └── index.js         # Entry point
-├── package.json         # Dependencies and scripts
-└── README.md            # This file
+# TaskFlow 🚀
+
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=json-web-tokens&logoColor=white)
+![GitHub License](https://img.shields.io/badge/license-MIT-blue?style=for-the-badge)
